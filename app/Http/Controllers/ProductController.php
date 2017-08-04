@@ -13,7 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return 'index method of product controller';
     }
 
     /**
@@ -23,7 +23,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        //coding
+
+        return redirect ()->route ('home')->with ('message','product created successfully');
     }
 
     /**

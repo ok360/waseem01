@@ -1,8 +1,5 @@
 <?php
 
-Route::get('/',function (){
-    return view('layout.master');
-});
-Route::get('login','LoginController@login');
+Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('home','HomeController@index');
+Route::resource('product','ProductController');
