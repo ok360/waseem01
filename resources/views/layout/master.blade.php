@@ -13,9 +13,15 @@
 <div class="container">
 
     @include('layout.header')
-    @include('layout.side_menu')
 
-    @yield('body')
+    <div class="row">
+        @include('layout.side_menu')
+    <div class="col-md-9">
+        @yield('body')
+
+    </div>
+
+    </div>
 
 </div>
 

@@ -14,6 +14,8 @@
             <th>ID</th>
             <th>Name</th>
             <th>Class</th>
+            <th>Action</th>
+
         </tr>
         @foreach($students as $student)
             <tr>
@@ -21,7 +23,11 @@
                 <td>{{$student->id}}</td>
                 <td>{{$student->name}}</td>
                 <td>{{$student->class}}</td>
-
+                    <td>
+                        {!! Form::open(['url'=>['student/delete',$student->id],'method'=>'delete']) !!}
+                        <input type="submit" value="Delete">
+                        {!! Form::close() !!}
+                    </td>
             </tr>
         @endforeach
 

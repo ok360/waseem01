@@ -9,7 +9,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $students = Student::paginate(2);
+
+        $students = Student::paginate(4);
         return view ('welcome',compact ('students'));
     }
 }

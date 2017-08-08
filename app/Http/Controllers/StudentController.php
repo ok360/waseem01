@@ -9,11 +9,20 @@ class StudentController extends Controller
 {
     public function create()
      {
-        Student::create([
-            'name'=>'Waseem',
-            'class'=>'Mcs'
-                        ]);
-        return back ();
+
+        return view ('student.create');
      }
-	
+	public function store(Request $request)
+    {
+        $student = new Student();
+        $student->name = $request->name;
+        $student->class= $request->class;
+        $student->save ();
+        return redirect ('/');
+    }
+    public function destroy ($id)
+    {
+        Student::destroy ($id);
+        return back ();
+    }
 }
