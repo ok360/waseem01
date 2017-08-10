@@ -61,9 +61,9 @@ class TeacherController extends Controller
      * @param  \App\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Teacher $teacher)
     {
-        $teacher =  Teacher::find($id);
+        // $teacher =  Teacher::find($id);
         return view ('teacher.edit' ,compact ('teacher'));
     }
 

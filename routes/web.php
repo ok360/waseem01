@@ -12,4 +12,6 @@ Route::post('student/store','StudentController@store');
 Route::delete('student/delete/{id}','StudentController@destroy');
 
 
-Route::resource('teacher','TeacherController');
+    Route::resource('/','TeacherController');
+
+
