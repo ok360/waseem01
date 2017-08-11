@@ -15,7 +15,7 @@
     @include('layout.header')
 
     <div class="row">
-        @include('layout.side_menu')
+            @include('layout.side_menu')
     <div class="col-md-9">
         @yield('body')
 

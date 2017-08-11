@@ -27,8 +27,8 @@
             <td>{{$teacher->created_at->diffForHumans()}}</td>
             <td>
 
-               {!! Form::open(['url'=>['teacher',$teacher->id],'method'=>'delete']) !!}
-                <a href="{{url ('teacher/'.$teacher->id.'/edit')}}" class="btn btn-info">Edit</a>
+               {!! Form::open(['url'=>['admin/teacher',$teacher->id],'method'=>'delete']) !!}
+                <a href="{{url ('admin/teacher/'.$teacher->id.'/edit')}}" class="btn btn-info">Edit</a>
                 <input type="submit" value="detele">
                 {!! Form::close() !!}
             </td>
