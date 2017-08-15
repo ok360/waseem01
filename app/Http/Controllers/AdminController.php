@@ -10,4 +10,10 @@ class AdminController extends Controller
     {
         return 'Admin Home';
     }
+    public function image(Request $request)
+    {
+        return dd ($request);
+        return 'Admin Home';
+    }
+
 }

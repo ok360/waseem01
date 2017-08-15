@@ -12,9 +12,17 @@ class TeacherController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function search(Request $request)
+    {
+      $teachers = Teacher::where('name',$request->search)
+          ->orWhere ('age',$request->search)
+          ->get ();
+        return view ('teacher.index',compact ('teachers'));
+    }
     public function index()
     {
         $teachers = Teacher::all ();
+//        return dd($teachers);
         return view('teacher.index',compact ('teachers'));
     }
 

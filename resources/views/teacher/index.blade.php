@@ -8,6 +8,10 @@
         </div>
     @endif
     <a href="{{url ('teacher/create')}}" class="btn btn-primary">Create</a>
+    {!! Form::open(['url'=>'search','method'=>'post']) !!}
+    <input type="text" name="search">
+    <input type="submit" value="search">
+    {!! Form::close() !!}
     <table class="table table-responsive">
         <tr>
             <th>ID</th>
