@@ -1,10 +1,10 @@
 <?php
 
-Route::get('image',function (){
-    return view ('image.create');
-});
+//Route::get('image',function (){
+//    return view ('image.create');
+//});
 
-Route::post('image','AdminController@image');
+Route::resource('image','ImageController');
 
 Route::get('/', 'HomeController@index')->name('home');
 
