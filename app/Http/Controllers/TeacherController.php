@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Profession;
 use App\Teacher;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,7 @@ class TeacherController extends Controller
     }
     public function index()
     {
-        $teachers = Teacher::all ();
+        $teachers = Teacher::with ('profession','contactNumbers')->get();
 //        return dd($teachers);
         return view('teacher.index',compact ('teachers'));
     }
@@ -46,10 +47,22 @@ class TeacherController extends Controller
     {
         $this->validate ($request,[
             'name'=>'required',
-            'age'=>'required'
+            'age'=>'required',
+            'profession'=>'required'
         ]);
-       Teacher::create($request->all ());
-       return redirect ('teacher')->with('success','Record created successfully');
+
+           $teacher = new Teacher();
+           $teacher->name = $request->name;
+           $teacher->age = $request->age;
+            $teacher->save();
+
+          $profession=new  Profession();
+//          $profession->teacher_id = $teacher->id;
+          $profession->name= $request->profession;
+//          $profession->save ();
+            $teacher->profession ()->save ($profession);
+
+        return redirect ('teacher')->with('success','Record created successfully');
     }
 
     /**

@@ -6,6 +6,7 @@
     {!! Form::open(['url'=>'teacher','method'=>'post']) !!}
     Name:<input type="text" name="name" >
     Age:<input type="number" name="age">
+    Profession:<input type="text" name="profession">
     <input type="submit">
     {!! Form::close() !!}
 

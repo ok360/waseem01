@@ -3,9 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 
-class AdminMiddleware
+class AssittMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,11 +16,10 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check () && Auth::user ()->is_admin=="admin")
+        if (Auth::check() && Auth::user()->is_admin=="assitt" )
         {
             return $next($request);
-        }
-        else
+        }else
         {
             return redirect ('/');
         }

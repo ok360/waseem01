@@ -1,12 +1,12 @@
 <?php
 
-//Route::get('image',function (){
-//    return view ('image.create');
-//});
+Route::get('/',function (){
+    return view ('welcome');
+});
 
 Route::resource('image','ImageController');
 
-Route::get('/', 'HomeController@index')->name('home');
+//Route::get('/', 'HomeController@index')->name('home');
 
 Route::resource('product','ProductController');
 
@@ -31,6 +31,12 @@ Route::group(['middleware'=>'admin','prefix'=>'admin'],function (){
 
     Route::get('home','AdminController@index');
 
-
 });
 
+Route::group(['middleware'=>'assitt'],function (){
+
+    Route::get('assitt/home',function (){
+        return 'Assitt dashboard';
+    });
+
+});

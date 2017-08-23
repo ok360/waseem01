@@ -17,6 +17,8 @@
             <th>ID</th>
             <th>Name</th>
             <th>Age</th>
+            <th>Profession</th>
+            <th>Contact #</th>
             <th>updated At</th>
             <th>Created At</th>
             <th>Action</th>
@@ -27,6 +29,20 @@
             <td>{{$teacher->id}}</td>
             <td>{{$teacher->name}}</td>
             <td>{{$teacher->age}}</td>
+            @if($teacher->profession)
+            <td>{{$teacher->profession->name}}</td>
+            @else
+                <td>No record Found</td>
+            @endif
+            <td>
+                <ul>
+                    @forelse($teacher->contactNumbers as $contactNumber)
+                    <li>{{$contactNumber->contact}}</li>
+                    @empty
+                        <li>N/A</li>
+                    @endforelse
+                </ul>
+            </td>
             <td>{{$teacher->updated_at->diffForHumans()}}</td>
             <td>{{$teacher->created_at->diffForHumans()}}</td>
             <td>

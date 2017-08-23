@@ -26,12 +26,4 @@
         @endforeach
     </table>
 
-
-
-
-
-        
-
-
-
     @endsection
